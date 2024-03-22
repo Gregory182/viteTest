@@ -59,14 +59,15 @@ function App() {
   return (
     <>
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/excel" element={<ExcelScreen />} />
           <Route path="/aggrid" element={<Grid_1 />} />
 
+          <Route path="/*" element={<div>Not Found</div>} />
         </Route>
+        <Route path="/*" element={<div>Not Found</div>} />
       </Routes>
     </>
   );

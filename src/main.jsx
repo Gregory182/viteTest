@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.Fragment>
-    <BrowserRouter>
+    <BrowserRouter basename="viteTest">
       <App />
     </BrowserRouter>
   </React.Fragment>
