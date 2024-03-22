@@ -38,7 +38,7 @@ const Chat = () => {
     <div>
       <div>
         <div>
-          <label htmlFor="userName">Twój nick</label>
+          <label htmlFor="userName">Twój nick du u pp aa</label>
           <input id="userName" type="text" ref={userNameRef} />
           <button onClick={setName}>Wbijam</button>
         </div>
