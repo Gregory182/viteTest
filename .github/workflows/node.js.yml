@@ -27,7 +27,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        source_dir: /dist/
+        source_dir: ./dist/*
         destination_dir: ./www
     # - name: Get SSH
     #   run: |
