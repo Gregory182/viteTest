@@ -12,10 +12,11 @@ jobs:
     container:
       image: node:20
     steps:
-    - uses: actions/checkout@v3
-      
+    - uses: actions/checkout@v3 
       with: 
         node-version: 20
+    - name: Install deps
+      working-directory: frontend
     - run: npm i
     - run: npm run build
 
@@ -27,7 +28,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        source_dir: dist/
+        source_dir: frontend/dist/
         destination_dir: ./www
     # - name: Get SSH
     #   run: |
