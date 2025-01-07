@@ -28,9 +28,6 @@ jobs:
         ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source_dir: ./dist
         destination_dir: ./www
-        
-
-
     # - name: Get SSH
     #   run: |
     #     mkdir -p ~/.ssh
