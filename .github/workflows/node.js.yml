@@ -22,11 +22,10 @@ jobs:
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
-        ssh_port: 10268
         port: 10268
-        ssh_username: ${{ secrets.USERNAME }}
-        ssh_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source_dir: ./dist
         destination_dir: ./www
     # - name: Get SSH
