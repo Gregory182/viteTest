@@ -17,9 +17,20 @@ jobs:
         node-version: 20
     - run: npm ci
     - run: npm run build
-    - name: Get SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" >> ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
-    - name: Deploy using SCP echosis
-      run: scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./dist/* ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p10268:~/www
+
+    - name: Copy to Remote Server
+      uses: pierrickdelrieu/scp-action@v0.1.0
+      with:
+        host: ${{ secrets.HOST }}
+        ssh_port: 10268
+        ssh_username: ${{ secrets.USERNAME }}
+        ssh_key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source_dir: ./dist
+        destination_dir: ./www
+        rm: true
+    # - name: Get SSH
+    #   run: |
+    #     mkdir -p ~/.ssh
+    #     echo "${{ secrets.SSH_PRIVATE_KEY }}" >> ~/.ssh/id_rsa && chmod 600 ~/.ssh/id_rsa
+    # - name: Deploy using SCP echosis
+    #   run: scp -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa -r ./dist/* ${{ secrets.USERNAME }}@${{ secrets.HOST }} -p10268:~/www
