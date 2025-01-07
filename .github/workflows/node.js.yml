@@ -28,7 +28,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         # passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source: "./dist/*"
-        destination: "/"
+        destination: "/home/deploy/www"
     # - name: Get SSH
     #   run: |
     #     mkdir -p ~/.ssh
