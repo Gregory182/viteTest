@@ -24,11 +24,11 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         port: 10268
-        username: root  #${{ secrets.USERNAME }}
+        username: ${{ secrets.USERNAME }}
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         # passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source: "./dist/*"
-        destination: "~/"
+        destination: "/"
     # - name: Get SSH
     #   run: |
     #     mkdir -p ~/.ssh
