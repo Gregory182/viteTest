@@ -23,6 +23,7 @@ jobs:
       with:
         host: ${{ secrets.HOST }}
         ssh_port: 10268
+        port: 10268
         ssh_username: ${{ secrets.USERNAME }}
         ssh_key: ${{ secrets.SSH_PRIVATE_KEY }}
         ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
