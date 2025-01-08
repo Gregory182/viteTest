@@ -28,7 +28,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         # passphrase: ${{ secrets.SSH_PASSPHRASE }}
         source: "./dist/*"
-        destination: "/home/${{ secrets.USERNAME }}/app"
+        target: "/home/${{ secrets.USERNAME }}/app"
     # - name: Get SSH
     #   run: |
     #     mkdir -p ~/.ssh
